@@ -1,5 +1,4 @@
-# Chatbot Usando Python De Forma Didática
-
+# Chatbot Usando Python
 ## Índice
 
 1. [Visão Geral do Projeto](#1-visão-geral-do-projeto)
