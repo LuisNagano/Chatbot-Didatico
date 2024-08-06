@@ -83,10 +83,8 @@ Certifique-se de ter o Python instalado no seu sistema. Você pode baixá-lo em 
 ## 5. Estrutura do Projeto
 
 ```plaintext
-End-to-End-Chatbot/
+Chatbot-Didatico/
 ├── app_flask.py
-├── intents.json
-├── requirements.txt
 ├── templates/
 │   └── index.html
 └── README.md
