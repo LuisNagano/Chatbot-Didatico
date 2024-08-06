@@ -1,31 +1,24 @@
 # Chatbot Usando Python De Forma Didática
 
----
-
-Este projeto demonstra a implementação completa de um chatbot usando Python, incorporando técnicas de Processamento de Linguagem Natural (NLP) e Aprendizado de Máquina (ML). O chatbot é projetado para interagir com os usuários, entender suas consultas e fornecer respostas apropriadas.
-
----
-
 ## Índice
 
 1. [Visão Geral do Projeto](#1-visão-geral-do-projeto)
 2. [Funcionalidades](#2-funcionalidades)
 3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-4. [Configuração e Instalação](#4-configuração-e-instalação)
-5. [Estrutura do Projeto](#5-estrutura-do-projeto)
-6. [Explicação Detalhada](#6-explicação-detalhada)
-    - [1. Importação de Bibliotecas](#61-importação-de-bibliotecas)
-    - [2. Tokenização de Texto](#62-tokenização-de-texto)
-    - [3. Definição de Intenções](#63-definição-de-intenções)
-    - [4. Transformação das Frases de Entrada](#64-transformação-das-frases-de-entrada)
-    - [5. Treinamento do Classificador de Regressão Logística](#65-treinamento-do-classificador-de-regressão-logística)
-    - [6. Função de Resposta do Chatbot](#66-função-de-resposta-do-chatbot)
-    - [7. Teste da Função de Resposta](#67-teste-da-função-de-resposta)
-    - [8. Loop de Interação com o Usuário](#68-loop-de-interação-com-o-usuário)
-    - [9. Integração com Flask](#69-integração-com-flask)
-    - [10. Execução do App Flask](#610-execução-do-app-flask)
-7. [Contribuições](#7-contribuições)
-8. [Licença](#8-licença)
+4. [Estrutura do Projeto](#4-estrutura-do-projeto)
+5. [Explicação Detalhada](#5-explicação-detalhada)
+    - [1. Importação de Bibliotecas](#51-importação-de-bibliotecas)
+    - [2. Tokenização de Texto](#52-tokenização-de-texto)
+    - [3. Definição de Intenções](#53-definição-de-intenções)
+    - [4. Transformação das Frases de Entrada](#54-transformação-das-frases-de-entrada)
+    - [5. Treinamento do Classificador de Regressão Logística](#55-treinamento-do-classificador-de-regressão-logística)
+    - [6. Função de Resposta do Chatbot](#56-função-de-resposta-do-chatbot)
+    - [7. Teste da Função de Resposta](#57-teste-da-função-de-resposta)
+    - [8. Loop de Interação com o Usuário](#58-loop-de-interação-com-o-usuário)
+    - [9. Integração com Flask](#59-integração-com-flask)
+    - [10. Execução do App Flask](#510-execução-do-app-flask)
+6. [Contribuições](#6-contribuições)
+7. [Licença](#7-licença)
 
 ---
 
@@ -47,40 +40,7 @@ Este projeto demonstra a criação de um chatbot inteligente usando Python. O ch
 - **scikit-learn**: Para extração de características (`TfidfVectorizer`) e aprendizado de máquina (`LogisticRegression`).
 - **Flask**: Para implantação do chatbot como uma aplicação web.
 
-## 4. Configuração e Instalação
-
-### Pré-requisitos
-
-Certifique-se de ter o Python instalado no seu sistema. Você pode baixá-lo em [python.org](https://www.python.org/).
-
-### Passos de Instalação
-
-1. **Clone o Repositório**:
-    ```bash
-    git clone https://
-    cd End-to-End-Chatbot
-    ```
-
-2. **Crie um Ambiente Virtual**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
-    ```
-
-3. **Instale as Bibliotecas Necessárias**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Execute o App Flask**:
-    ```bash
-    python app_flask.py
-    ```
-
-5. **Acesse o Chatbot**:
-    Abra seu navegador e navegue até `http://127.0.0.1:5001/`.
-
-## 5. Estrutura do Projeto
+## 4. Estrutura do Projeto
 
 ```plaintext
 Chatbot-Didatico/
@@ -91,14 +51,12 @@ Chatbot-Didatico/
 ```
 
 - **app_flask.py**: O arquivo principal da aplicação Flask.
-- **intents.json**: Arquivo JSON contendo as intenções predefinidas.
-- **requirements.txt**: Lista de dependências do projeto.
 - **templates/index.html**: Template HTML para a interface web.
 - **README.md**: Arquivo README do projeto.
 
-## 6. Explicação Detalhada
+## 5. Explicação Detalhada
 
-### 6.1. Importação de Bibliotecas
+### 5.1. Importação de Bibliotecas
 
 ```python
 import nltk
@@ -107,13 +65,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 ```
 
-### 6.2. Tokenização de Texto
+### 5.2. Tokenização de Texto
 
 ```python
 nltk.download("punkt")
 ```
 
-### 6.3. Definição de Intenções
+### 5.3. Definição de Intenções
 
 As intenções são definidas como uma lista de dicionários, cada um representando uma intenção específica com padrões e respostas associadas.
 
@@ -128,7 +86,7 @@ intents = [
 ]
 ```
 
-### 6.4. Transformação das Frases de Entrada
+### 5.4. Transformação das Frases de Entrada
 
 Usando `TfidfVectorizer` para converter frases de entrada em vetores numéricos.
 
@@ -136,7 +94,7 @@ Usando `TfidfVectorizer` para converter frases de entrada em vetores numéricos.
 vectorizer = TfidfVectorizer()
 ```
 
-### 6.5. Treinamento do Classificador de Regressão Logística
+### 5.5. Treinamento do Classificador de Regressão Logística
 
 Treinando o classificador com vetores TF-IDF.
 
@@ -153,7 +111,7 @@ y = tags
 classifier.fit(x, y)
 ```
 
-### 6.6. Função de Resposta do Chatbot
+### 5.6. Função de Resposta do Chatbot
 
 Definindo uma função para gerar respostas com base na entrada do usuário.
 
@@ -166,14 +124,14 @@ def chatbot_response(text):
             return random.choice(intent['responses'])
 ```
 
-### 6.7. Teste da Função de Resposta
+### 5.7. Teste da Função de Resposta
 
 ```python
 response = chatbot_response("What are the helps you provide?")
 print(response)
 ```
 
-### 6.8. Loop de Interação com o Usuário
+### 5.8. Loop de Interação com o Usuário
 
 ```python
 while True:
@@ -182,7 +140,7 @@ while True:
     print("Chatbot-> {}".format(response))
 ```
 
-### 6.9. Integração com Flask
+### 5.9. Integração com Flask
 
 Criando uma interface web usando Flask.
 
@@ -202,7 +160,7 @@ if __name__ == "__main__":
     app.run(debug=True, port=5001)
 ```
 
-### 6.10. Execução do App Flask
+### 5.10. Execução do App Flask
 
 Siga estes passos para executar a aplicação Flask:
 
@@ -214,10 +172,10 @@ Siga estes passos para executar a aplicação Flask:
     ```
 4. Abra o URL fornecido no seu navegador.
 
-## 7. Contribuições
+## 6. Contribuições
 
 Contribuições são bem-vindas! Por favor, faça um fork deste repositório e envie um pull request para quaisquer melhorias, correções de bugs ou novas funcionalidades.
 
-## 8. Licença
+## 7. Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
