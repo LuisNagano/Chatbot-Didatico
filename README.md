@@ -2,7 +2,7 @@
 
 ---
 
-Este projeto demonstra a implementação completa de um chatbot usando Python, incorporando técnicas de Processamento de Linguagem Natural (NLP) e Aprendizado de Máquina (ML). O chatbot é projetado para interagir com os usuários, entender suas consultas e fornecer respostas apropriadas. Este README irá guiá-lo através do projeto, sua estrutura, como configurá-lo e executá-lo.
+Este projeto demonstra a implementação completa de um chatbot usando Python, incorporando técnicas de Processamento de Linguagem Natural (NLP) e Aprendizado de Máquina (ML). O chatbot é projetado para interagir com os usuários, entender suas consultas e fornecer respostas apropriadas.
 
 ---
 
