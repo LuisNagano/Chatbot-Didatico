@@ -1,61 +1,63 @@
-# Chatbot Usando Python
-## Índice
+Here is the translated version in English following your Markdown format:
 
-1. [Visão Geral do Projeto](#1-visão-geral-do-projeto)
-2. [Funcionalidades](#2-funcionalidades)
-3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-4. [Estrutura do Projeto](#4-estrutura-do-projeto)
-5. [Explicação Detalhada](#5-explicação-detalhada)
-    - [1. Importação de Bibliotecas](#51-importação-de-bibliotecas)
-    - [2. Tokenização de Texto](#52-tokenização-de-texto)
-    - [3. Definição de Intenções](#53-definição-de-intenções)
-    - [4. Transformação das Frases de Entrada](#54-transformação-das-frases-de-entrada)
-    - [5. Treinamento do Classificador de Regressão Logística](#55-treinamento-do-classificador-de-regressão-logística)
-    - [6. Função de Resposta do Chatbot](#56-função-de-resposta-do-chatbot)
-    - [7. Teste da Função de Resposta](#57-teste-da-função-de-resposta)
-    - [8. Loop de Interação com o Usuário](#58-loop-de-interação-com-o-usuário)
-    - [9. Integração com Flask](#59-integração-com-flask)
-    - [10. Execução do App Flask](#510-execução-do-app-flask)
-6. [Contribuições](#6-contribuições)
-7. [Licença](#7-licença)
+# Chatbot Using Python
+## Table of Contents
+
+1. [Project Overview](#1-project-overview)
+2. [Features](#2-features)
+3. [Technologies Used](#3-technologies-used)
+4. [Project Structure](#4-project-structure)
+5. [Detailed Explanation](#5-detailed-explanation)
+    - [1. Library Imports](#51-library-imports)
+    - [2. Text Tokenization](#52-text-tokenization)
+    - [3. Intent Definition](#53-intent-definition)
+    - [4. Input Sentence Transformation](#54-input-sentence-transformation)
+    - [5. Logistic Regression Classifier Training](#55-logistic-regression-classifier-training)
+    - [6. Chatbot Response Function](#56-chatbot-response-function)
+    - [7. Testing the Response Function](#57-testing-the-response-function)
+    - [8. User Interaction Loop](#58-user-interaction-loop)
+    - [9. Flask Integration](#59-flask-integration)
+    - [10. Running the Flask App](#510-running-the-flask-app)
+6. [Contributions](#6-contributions)
+7. [License](#7-license)
 
 ---
 
-## 1. Visão Geral do Projeto
+## 1. Project Overview
 
-Este projeto demonstra a criação de um chatbot inteligente usando Python. O chatbot é capaz de entender entradas dos usuários e responder de maneira apropriada, aproveitando técnicas de NLP e ML. É uma implementação robusta e completa, desde o pré-processamento de dados até a implantação do chatbot usando Flask.
+This project demonstrates the creation of an intelligent chatbot using Python. The chatbot is capable of understanding user input and responding appropriately, utilizing NLP and ML techniques. It is a robust and complete implementation, from data preprocessing to deploying the chatbot using Flask.
 
-## 2. Funcionalidades
+## 2. Features
 
-- **Processamento de Linguagem Natural**: Tokenização e processamento de texto eficiente usando `nltk`.
-- **Aprendizado de Máquina**: Implementação de Regressão Logística para classificação de intenções.
-- **Interface Interativa**: Loop contínuo de interação com o usuário e interface web baseada em Flask.
-- **Intenções Personalizáveis**: Fácil definição e extensão de intenções para o chatbot.
+- **Natural Language Processing**: Efficient text tokenization and processing using `nltk`.
+- **Machine Learning**: Logistic Regression implementation for intent classification.
+- **Interactive Interface**: Continuous user interaction loop and web interface based on Flask.
+- **Customizable Intents**: Easy definition and extension of chatbot intents.
 
-## 3. Tecnologias Utilizadas
+## 3. Technologies Used
 
-- **Python**: A linguagem principal para a implementação.
-- **nltk**: Para processamento e tokenização de texto.
-- **scikit-learn**: Para extração de características (`TfidfVectorizer`) e aprendizado de máquina (`LogisticRegression`).
-- **Flask**: Para implantação do chatbot como uma aplicação web.
+- **Python**: The main language for the implementation.
+- **nltk**: For text processing and tokenization.
+- **scikit-learn**: For feature extraction (`TfidfVectorizer`) and machine learning (`LogisticRegression`).
+- **Flask**: To deploy the chatbot as a web application.
 
-## 4. Estrutura do Projeto
+## 4. Project Structure
 
 ```plaintext
-Chatbot-Didatico/
+Chatbot-Didactic/
 ├── app_flask.py
 ├── templates/
 │   └── index.html
 └── README.md
 ```
 
-- **app_flask.py**: O arquivo principal da aplicação Flask.
-- **templates/index.html**: Template HTML para a interface web.
-- **README.md**: Arquivo README do projeto.
+- **app_flask.py**: The main Flask application file.
+- **templates/index.html**: HTML template for the web interface.
+- **README.md**: The project’s README file.
 
-## 5. Explicação Detalhada
+## 5. Detailed Explanation
 
-### 5.1. Importação de Bibliotecas
+### 5.1. Library Imports
 
 ```python
 import nltk
@@ -64,15 +66,15 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 ```
 
-### 5.2. Tokenização de Texto
+### 5.2. Text Tokenization
 
 ```python
 nltk.download("punkt")
 ```
 
-### 5.3. Definição de Intenções
+### 5.3. Intent Definition
 
-As intenções são definidas como uma lista de dicionários, cada um representando uma intenção específica com padrões e respostas associadas.
+Intents are defined as a list of dictionaries, each representing a specific intent with associated patterns and responses.
 
 ```python
 intents = [
@@ -85,17 +87,17 @@ intents = [
 ]
 ```
 
-### 5.4. Transformação das Frases de Entrada
+### 5.4. Input Sentence Transformation
 
-Usando `TfidfVectorizer` para converter frases de entrada em vetores numéricos.
+Using `TfidfVectorizer` to convert input sentences into numerical vectors.
 
 ```python
 vectorizer = TfidfVectorizer()
 ```
 
-### 5.5. Treinamento do Classificador de Regressão Logística
+### 5.5. Logistic Regression Classifier Training
 
-Treinando o classificador com vetores TF-IDF.
+Training the classifier with TF-IDF vectors.
 
 ```python
 classifier = LogisticRegression(random_state=0, max_iter=10000)
@@ -110,9 +112,9 @@ y = tags
 classifier.fit(x, y)
 ```
 
-### 5.6. Função de Resposta do Chatbot
+### 5.6. Chatbot Response Function
 
-Definindo uma função para gerar respostas com base na entrada do usuário.
+Defining a function to generate responses based on user input.
 
 ```python
 def chatbot_response(text):
@@ -123,14 +125,14 @@ def chatbot_response(text):
             return random.choice(intent['responses'])
 ```
 
-### 5.7. Teste da Função de Resposta
+### 5.7. Testing the Response Function
 
 ```python
 response = chatbot_response("What are the helps you provide?")
 print(response)
 ```
 
-### 5.8. Loop de Interação com o Usuário
+### 5.8. User Interaction Loop
 
 ```python
 while True:
@@ -139,9 +141,9 @@ while True:
     print("Chatbot-> {}".format(response))
 ```
 
-### 5.9. Integração com Flask
+### 5.9. Flask Integration
 
-Criando uma interface web usando Flask.
+Creating a web interface using Flask.
 
 ```python
 from flask import Flask, render_template, request
@@ -159,22 +161,18 @@ if __name__ == "__main__":
     app.run(debug=True, port=5001)
 ```
 
-### 5.10. Execução do App Flask
+### 5.10. Running the Flask App
 
-Siga estes passos para executar a aplicação Flask:
+Follow these steps to run the Flask application:
 
-1. Abra o prompt de comando ou Anaconda.
-2. Navegue até o diretório do projeto.
-3. Execute o app Flask:
+1. Open the command prompt or Anaconda.
+2. Navigate to the project directory.
+3. Run the Flask app:
     ```bash
     python app_flask.py
     ```
-4. Abra o URL fornecido no seu navegador.
+4. Open the provided URL in your browser.
 
-## 6. Contribuições
+## 6. Contributions
 
-Contribuições são bem-vindas! Por favor, faça um fork deste repositório e envie um pull request para quaisquer melhorias, correções de bugs ou novas funcionalidades.
-
-## 7. Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Contributions are welcome! Please fork this repository and submit a pull request for any improvements, bug fixes, or new features.
